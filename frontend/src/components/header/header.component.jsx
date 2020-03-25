@@ -1,8 +1,9 @@
 import React from 'react';
 import { Menu, Input, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { auth } from '../../utils/firebase.utils';
 
-const Header = props => (
+const Header = ({ currentUser }, props) => (
     <div className='header'>
         <Menu secondary stackable>
             <Menu.Item header>BANK MEGA</Menu.Item>
@@ -39,11 +40,15 @@ const Header = props => (
                 <Menu.Item>
                     <Input icon='search' placeholder='Search...' />
                 </Menu.Item>
-                <Menu.Item
-                    name='logout'
-                    active={props.activeItem === 'logout'}
-                    onClick={props.handleItemClick}
-                />
+                {currentUser ? (
+                    <Menu.Item
+                        name='sign out'
+                        active={props.activeItem === 'sign out'}
+                        onClick={() => auth.signOut()}
+                    />
+                ) : (
+                    <Menu.Item as={Link} to='/signin' name='sign in' />
+                )}
             </Menu.Menu>
         </Menu>
     </div>
