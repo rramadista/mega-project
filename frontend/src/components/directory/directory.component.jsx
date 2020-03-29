@@ -10,7 +10,9 @@ class Directory extends Component {
                 { id: 1, title: 'organizations', linkUrl: 'organization' },
                 { id: 2, title: 'positions', linkUrl: 'position' },
                 { id: 3, title: 'jobs', linkUrl: 'job' },
-                { id: 4, title: 'branches', linkUrl: 'branch' }
+                { id: 4, title: 'branches', linkUrl: 'branch' },
+                { id: 5, title: 'offices', linkUrl: 'office' },
+                { id: 6, title: 'employees', linkUrl: 'employee' }
             ]
         };
     }

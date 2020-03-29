@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Segment, Divider, Icon } from 'semantic-ui-react';
-import { auth, signInWithGoogle } from '../../utils/firebase.utils';
+import { auth, signInWithGoogle } from '../../services/firebase/firebase.utils';
 
 class SignIn extends Component {
     constructor(props) {

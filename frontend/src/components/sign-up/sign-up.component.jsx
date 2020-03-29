@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Segment, Divider, Form, Checkbox, Button } from 'semantic-ui-react';
-import { auth, createUserProfileDocument } from '../../utils/firebase.utils';
+import {
+    auth,
+    createUserProfileDocument
+} from '../../services/firebase/firebase.utils';
 
 class SignUp extends Component {
     constructor() {

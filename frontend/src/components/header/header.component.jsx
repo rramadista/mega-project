@@ -1,7 +1,8 @@
 import React from 'react';
 import { Menu, Input, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { auth } from '../../utils/firebase.utils';
+import { auth } from '../../services/firebase/firebase.utils';
+import { connect } from 'react-redux';
 
 const Header = ({ currentUser }, props) => (
     <div className='header'>
@@ -54,4 +55,8 @@ const Header = ({ currentUser }, props) => (
     </div>
 );
 
-export default Header;
+const mapStateToProps = ({ user: currentUser }) => ({
+    currentUser
+});
+
+export default connect(mapStateToProps)(Header);
